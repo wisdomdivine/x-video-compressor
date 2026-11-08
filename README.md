@@ -36,3 +36,8 @@ Review the output file size, original size, space saved percentage, and preview 
 3. Choose your compression preset or adjust settings to your preference.
 4. Click Compress Now and watch the live progress bar.
 5. Preview your result and click Download to save the compressed file.
+
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
