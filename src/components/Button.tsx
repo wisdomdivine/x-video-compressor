@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline' | 'danger'
@@ -36,14 +37,16 @@ export const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <button
+    <motion.button
+      whileHover={disabled ? undefined : { y: -1 }}
+      whileTap={disabled ? undefined : { scale: 0.98 }}
+      transition={{ duration: 0.15 }}
       className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
       disabled={disabled}
-      {...props}
+      {...(props as React.ComponentProps<typeof motion.button>)}
     >
       {icon && <span className="inline-flex shrink-0">{icon}</span>}
       {children}
-    </button>
+    </motion.button>
   )
 }
-

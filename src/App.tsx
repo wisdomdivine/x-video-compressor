@@ -124,16 +124,16 @@ export default function App() {
         onToggleLogoVariant={handleToggleLogoVariant}
       />
 
-      <main className="flex-1 w-full max-w-4xl mx-auto px-6 py-6 sm:py-10 flex flex-col justify-center">
+      <main className="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 py-4 sm:py-8 md:py-10 flex flex-col justify-center">
         <Card>
           <AnimatePresence mode="wait">
             {status === 'idle' && (
               <motion.div
                 key="idle"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
               >
                 <Dropzone onFileSelect={handleFileSelect} />
               </motion.div>
@@ -142,11 +142,11 @@ export default function App() {
             {status === 'selected' && selectedFile && (
               <motion.div
                 key="selected"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className="space-y-8"
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+                className="space-y-6 sm:space-y-8"
               >
                 <SelectedFileBar
                   file={selectedFile}
@@ -164,10 +164,10 @@ export default function App() {
             {status === 'compressing' && selectedFile && (
               <motion.div
                 key="compressing"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
               >
                 <ProgressBar
                   progress={progress}
@@ -181,10 +181,10 @@ export default function App() {
             {status === 'completed' && result && selectedFile && (
               <motion.div
                 key="completed"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
               >
                 <VideoPreview
                   result={result}
@@ -197,17 +197,17 @@ export default function App() {
             {status === 'error' && (
               <motion.div
                 key="error"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
                 className="space-y-6 text-center py-6"
               >
                 <div className="space-y-2">
-                  <h3 className="text-lg font-medium text-[#1C1917] m-0">
+                  <h3 className="text-base sm:text-lg font-medium text-[#1C1917] m-0">
                     Could not complete compression
                   </h3>
-                  <p className="text-sm text-[#78716C] font-normal max-w-md mx-auto m-0">
+                  <p className="text-xs sm:text-sm text-[#78716C] font-normal max-w-md mx-auto m-0 px-2">
                     {errorMessage || 'An error occurred during video processing'}
                   </p>
                 </div>
@@ -216,7 +216,7 @@ export default function App() {
                   <button
                     type="button"
                     onClick={() => setStatus('selected')}
-                    className="text-sm font-normal px-5 py-2.5 rounded-xl bg-[#EAE5DB] text-[#1C1917] hover:bg-[#DFD9CE] cursor-pointer transition-colors"
+                    className="text-xs sm:text-sm font-normal px-5 py-2.5 rounded-xl bg-[#EAE5DB] text-[#1C1917] hover:bg-[#DFD9CE] cursor-pointer transition-colors"
                   >
                     Try again
                   </button>
@@ -227,7 +227,7 @@ export default function App() {
         </Card>
 
         {/* Informational footer with ample whitespace */}
-        <div className="mt-12 text-center space-y-3">
+        <div className="mt-8 sm:mt-12 text-center space-y-2 sm:space-y-3 px-4">
           <p className="text-xs text-[#78716C] font-normal m-0">
             Free and open tool. Videos stay on your computer and never upload anywhere.
           </p>

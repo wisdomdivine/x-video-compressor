@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 export interface CardProps {
   children: React.ReactNode
@@ -7,11 +8,13 @@ export interface CardProps {
 
 export const Card: React.FC<CardProps> = ({ children, className = '' }) => {
   return (
-    <div
-      className={`bg-white border border-[#E2DDD5] rounded-2xl p-8 sm:p-10 ${className}`}
+    <motion.div
+      initial={{ opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.25, ease: 'easeOut' }}
+      className={`bg-white border border-[#E2DDD5] rounded-2xl p-5 sm:p-8 md:p-10 ${className}`}
     >
       {children}
-    </div>
+    </motion.div>
   )
 }
-

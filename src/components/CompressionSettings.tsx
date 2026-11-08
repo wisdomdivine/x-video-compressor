@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import type { CompressionOptions } from '../utils/compressor'
 
 export interface CompressionSettingsProps {
@@ -52,10 +53,15 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
   }
 
   return (
-    <div className="bg-[#FAF7F2] border border-[#E2DDD5] rounded-xl p-6 space-y-6">
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.25, delay: 0.05 }}
+      className="bg-[#FAF7F2] border border-[#E2DDD5] rounded-xl p-4 sm:p-6 space-y-5 sm:space-y-6"
+    >
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h3 className="text-base font-medium text-[#1C1917] m-0">
+          <h3 className="text-sm sm:text-base font-medium text-[#1C1917] m-0">
             Compression settings
           </h3>
           <p className="text-xs font-normal text-[#78716C] mt-1 m-0">
@@ -64,8 +70,11 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
         </div>
 
         {/* Preset Selector */}
-        <div className="flex items-center gap-2">
-          <button
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+          <motion.button
+            whileHover={{ y: -1 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.15 }}
             type="button"
             onClick={() => setPreset('small')}
             disabled={disabled}
@@ -76,8 +85,11 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
             }`}
           >
             Smallest size
-          </button>
-          <button
+          </motion.button>
+          <motion.button
+            whileHover={{ y: -1 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.15 }}
             type="button"
             onClick={() => setPreset('balanced')}
             disabled={disabled}
@@ -88,8 +100,11 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
             }`}
           >
             Balanced
-          </button>
-          <button
+          </motion.button>
+          <motion.button
+            whileHover={{ y: -1 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.15 }}
             type="button"
             onClick={() => setPreset('hq')}
             disabled={disabled}
@@ -100,11 +115,11 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
             }`}
           >
             High quality
-          </button>
+          </motion.button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-1">
         {/* Resolution Scale */}
         <div className="space-y-1.5">
           <label className="text-xs font-medium text-[#57534E]">
@@ -191,6 +206,6 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
           </select>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import { Logo } from './Logo'
 
 export interface HeaderProps {
@@ -15,15 +16,26 @@ export const Header: React.FC<HeaderProps> = ({
   onToggleLogoVariant
 }) => {
   return (
-    <header className="w-full max-w-4xl mx-auto pt-10 pb-8 px-6 flex items-center justify-between">
-      <div className="flex items-center gap-4">
-        <Logo
-          type={logoType}
-          variant={logoVariant}
-          size="md"
+    <motion.header
+      initial={{ opacity: 0, y: -6 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.25 }}
+      className="w-full max-w-4xl mx-auto pt-6 sm:pt-10 pb-6 sm:pb-8 px-4 sm:px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+    >
+      <div className="flex items-center gap-3.5 sm:gap-4">
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ duration: 0.15 }}
+          className="cursor-pointer"
           onClick={onToggleLogoType}
-          className="cursor-pointer transition-transform hover:scale-105"
-        />
+        >
+          <Logo
+            type={logoType}
+            variant={logoVariant}
+            size="md"
+          />
+        </motion.div>
         <div>
           <h1 className="text-xl sm:text-2xl font-medium text-[#1C1917] tracking-tight m-0">
             Video Compressor
@@ -34,23 +46,29 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
 
-      <div className="flex items-center gap-2">
-        <button
+      <div className="flex items-center gap-2 self-end sm:self-auto">
+        <motion.button
+          whileHover={{ y: -1 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ duration: 0.15 }}
           onClick={onToggleLogoType}
           className="text-xs font-normal px-3 py-1.5 rounded-lg border border-[#E2DDD5] bg-white text-[#57534E] hover:bg-[#F7F4EE] cursor-pointer transition-colors"
           title="Switch between Cone and Monitor logo"
         >
           {logoType === 'cone' ? 'Cone' : 'Monitor'}
-        </button>
+        </motion.button>
 
-        <button
+        <motion.button
+          whileHover={{ y: -1 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ duration: 0.15 }}
           onClick={onToggleLogoVariant}
           className="text-xs font-normal px-3 py-1.5 rounded-lg border border-[#E2DDD5] bg-white text-[#57534E] hover:bg-[#F7F4EE] cursor-pointer transition-colors"
           title="Switch between color and black and white"
         >
           {logoVariant === 'color' ? 'Color' : 'Monochrome'}
-        </button>
+        </motion.button>
       </div>
-    </header>
+    </motion.header>
   )
 }
