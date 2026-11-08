@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+  <!-- Ground Shadow -->
+  <path d="M50 188 C50 188 175 190 205 190 C215 190 215 196 200 200 C170 205 60 205 45 200 C38 197 42 188 50 188 Z" fill="#1C1917" />
+  
+  <!-- Base Plate Layer - Bottom Edge -->
+  <path d="M42 178 L42 184 C42 190 48 193 56 193 L184 193 C192 193 198 190 198 184 L198 178 Z" fill="#1C1917" stroke="#1C1917" stroke-width="4" stroke-linejoin="round" />
+  
+  <!-- Base Plate Top Face -->
+  <path d="M58 152 C62 148 70 148 78 148 L162 148 C170 148 178 148 182 152 L198 178 C200 182 196 186 190 186 L50 186 C44 186 40 182 42 178 Z" fill="#FFFFFF" stroke="#1C1917" stroke-width="4" stroke-linejoin="round" />
+
+  <!-- Base Cone Shadow -->
+  <ellipse cx="120" cy="174" rx="42" ry="12" fill="#1C1917" />
+
+  <!-- Cone Body Bottom Section -->
+  <path d="M82 172 L93 138 C102 140 138 140 147 138 L158 172 C146 177 94 177 82 172 Z" fill="#1C1917" stroke="#1C1917" stroke-width="4" stroke-linejoin="round" />
+
+  <!-- Lower White Stripe -->
+  <path d="M93 138 L99 116 C106 118 134 118 141 116 L147 138 C138 140 102 140 93 138 Z" fill="#FFFFFF" stroke="#1C1917" stroke-width="4" stroke-linejoin="round" />
+
+  <!-- Middle Section -->
+  <path d="M99 116 L105 94 C110 95.5 130 95.5 135 94 L141 116 C134 118 106 118 99 116 Z" fill="#1C1917" stroke="#1C1917" stroke-width="4" stroke-linejoin="round" />
+
+  <!-- Upper White Stripe -->
+  <path d="M105 94 L110 76 C114 77 126 77 130 76 L135 94 C130 95.5 110 95.5 105 94 Z" fill="#FFFFFF" stroke="#1C1917" stroke-width="4" stroke-linejoin="round" />
+
+  <!-- Cone Tip -->
+  <path d="M110 76 C110 76 116 46 120 44 C124 46 130 76 130 76 C126 77 114 77 110 76 Z" fill="#1C1917" stroke="#1C1917" stroke-width="4" stroke-linejoin="round" />
+</svg>
