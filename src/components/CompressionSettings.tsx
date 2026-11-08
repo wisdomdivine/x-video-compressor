@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import type { CompressionOptions } from '../utils/compressor'
+import { CustomSelect } from './CustomSelect'
 
 export interface CompressionSettingsProps {
   options: CompressionOptions
@@ -52,12 +53,37 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
     return false
   }
 
+  const resolutionOptions = [
+    { value: 1.0, label: 'Original size 100%' },
+    { value: 0.75, label: 'Scaled 75%' },
+    { value: 0.5, label: 'Scaled 50%' },
+    { value: 0.35, label: 'Scaled 35%' }
+  ]
+
+  const bitrateOptions = [
+    { value: 800, label: '800 kbps (Very compact)' },
+    { value: 1500, label: '1500 kbps (Compact)' },
+    { value: 2500, label: '2500 kbps (Standard)' },
+    { value: 4000, label: '4000 kbps (Sharp)' },
+    { value: 6000, label: '6000 kbps (High fidelity)' }
+  ]
+
+  const audioOptions = [
+    { value: 'yes', label: 'Keep audio track' },
+    { value: 'no', label: 'Mute audio track' }
+  ]
+
+  const formatOptions = [
+    { value: 'mp4', label: 'MP4 format' },
+    { value: 'webm', label: 'WebM format' }
+  ]
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25, delay: 0.05 }}
-      className="bg-[#FAF7F2] border border-[#E2DDD5] rounded-xl p-4 sm:p-6 space-y-5 sm:space-y-6"
+      className="bg-[#FAF7F2] rounded-xl p-4 sm:p-6 space-y-5 sm:space-y-6"
     >
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
@@ -69,7 +95,7 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
           </p>
         </div>
 
-        {/* Preset Selector */}
+        {/* Preset Selector without any borders */}
         <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
           <motion.button
             whileHover={{ y: -1 }}
@@ -78,10 +104,10 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
             type="button"
             onClick={() => setPreset('small')}
             disabled={disabled}
-            className={`text-xs font-medium px-3 py-1.5 rounded-lg border transition-colors cursor-pointer ${
+            className={`text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-pointer outline-none ${
               isPresetActive('small')
-                ? 'bg-[#1C1917] text-white border-[#1C1917]'
-                : 'bg-white text-[#57534E] border-[#E2DDD5] hover:bg-[#F2ECE1]'
+                ? 'bg-[#1C1917] text-white'
+                : 'bg-white text-[#57534E] hover:bg-[#EAE5DB]'
             }`}
           >
             Smallest size
@@ -93,10 +119,10 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
             type="button"
             onClick={() => setPreset('balanced')}
             disabled={disabled}
-            className={`text-xs font-medium px-3 py-1.5 rounded-lg border transition-colors cursor-pointer ${
+            className={`text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-pointer outline-none ${
               isPresetActive('balanced')
-                ? 'bg-[#1C1917] text-white border-[#1C1917]'
-                : 'bg-white text-[#57534E] border-[#E2DDD5] hover:bg-[#F2ECE1]'
+                ? 'bg-[#1C1917] text-white'
+                : 'bg-white text-[#57534E] hover:bg-[#EAE5DB]'
             }`}
           >
             Balanced
@@ -108,10 +134,10 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
             type="button"
             onClick={() => setPreset('hq')}
             disabled={disabled}
-            className={`text-xs font-medium px-3 py-1.5 rounded-lg border transition-colors cursor-pointer ${
+            className={`text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-pointer outline-none ${
               isPresetActive('hq')
-                ? 'bg-[#1C1917] text-white border-[#1C1917]'
-                : 'bg-white text-[#57534E] border-[#E2DDD5] hover:bg-[#F2ECE1]'
+                ? 'bg-[#1C1917] text-white'
+                : 'bg-white text-[#57534E] hover:bg-[#EAE5DB]'
             }`}
           >
             High quality
@@ -120,91 +146,49 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-1">
-        {/* Resolution Scale */}
-        <div className="space-y-1.5">
-          <label className="text-xs font-medium text-[#57534E]">
-            Resolution
-          </label>
-          <select
-            value={options.resolutionScale}
-            disabled={disabled}
-            onChange={(e) =>
-              onChange({ ...options, resolutionScale: parseFloat(e.target.value) })
-            }
-            className="w-full bg-white border border-[#E2DDD5] text-xs font-normal text-[#1C1917] rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-[#E05A38]"
-          >
-            <option value="1.0">Original size 100%</option>
-            <option value="0.75">Scaled 75%</option>
-            <option value="0.5">Scaled 50%</option>
-            <option value="0.35">Scaled 35%</option>
-          </select>
-        </div>
+        {/* Custom Resolution Dropdown */}
+        <CustomSelect
+          label="Resolution"
+          value={options.resolutionScale}
+          options={resolutionOptions}
+          disabled={disabled}
+          onChange={(val) =>
+            onChange({ ...options, resolutionScale: val as number })
+          }
+        />
 
-        {/* Bitrate */}
-        <div className="space-y-1.5">
-          <label className="text-xs font-medium text-[#57534E]">
-            Target bit rate
-          </label>
-          <select
-            value={options.targetBitrateKbps}
-            disabled={disabled}
-            onChange={(e) =>
-              onChange({
-                ...options,
-                targetBitrateKbps: parseInt(e.target.value, 10)
-              })
-            }
-            className="w-full bg-white border border-[#E2DDD5] text-xs font-normal text-[#1C1917] rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-[#E05A38]"
-          >
-            <option value="800">800 kbps (Very compact)</option>
-            <option value="1500">1500 kbps (Compact)</option>
-            <option value="2500">2500 kbps (Standard)</option>
-            <option value="4000">4000 kbps (Sharp)</option>
-            <option value="6000">6000 kbps (High fidelity)</option>
-          </select>
-        </div>
+        {/* Custom Bitrate Dropdown */}
+        <CustomSelect
+          label="Target bit rate"
+          value={options.targetBitrateKbps}
+          options={bitrateOptions}
+          disabled={disabled}
+          onChange={(val) =>
+            onChange({ ...options, targetBitrateKbps: val as number })
+          }
+        />
 
-        {/* Audio */}
-        <div className="space-y-1.5">
-          <label className="text-xs font-medium text-[#57534E]">
-            Audio track
-          </label>
-          <select
-            value={options.includeAudio ? 'yes' : 'no'}
-            disabled={disabled}
-            onChange={(e) =>
-              onChange({
-                ...options,
-                includeAudio: e.target.value === 'yes'
-              })
-            }
-            className="w-full bg-white border border-[#E2DDD5] text-xs font-normal text-[#1C1917] rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-[#E05A38]"
-          >
-            <option value="yes">Keep audio track</option>
-            <option value="no">Mute audio track</option>
-          </select>
-        </div>
+        {/* Custom Audio Dropdown */}
+        <CustomSelect
+          label="Audio track"
+          value={options.includeAudio ? 'yes' : 'no'}
+          options={audioOptions}
+          disabled={disabled}
+          onChange={(val) =>
+            onChange({ ...options, includeAudio: val === 'yes' })
+          }
+        />
 
-        {/* Output Format */}
-        <div className="space-y-1.5">
-          <label className="text-xs font-medium text-[#57534E]">
-            Output format
-          </label>
-          <select
-            value={options.outputFormat}
-            disabled={disabled}
-            onChange={(e) =>
-              onChange({
-                ...options,
-                outputFormat: e.target.value as 'mp4' | 'webm'
-              })
-            }
-            className="w-full bg-white border border-[#E2DDD5] text-xs font-normal text-[#1C1917] rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-[#E05A38]"
-          >
-            <option value="mp4">MP4 format</option>
-            <option value="webm">WebM format</option>
-          </select>
-        </div>
+        {/* Custom Format Dropdown */}
+        <CustomSelect
+          label="Output format"
+          value={options.outputFormat}
+          options={formatOptions}
+          disabled={disabled}
+          onChange={(val) =>
+            onChange({ ...options, outputFormat: val as 'mp4' | 'webm' })
+          }
+        />
       </div>
     </motion.div>
   )

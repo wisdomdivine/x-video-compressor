@@ -55,7 +55,7 @@ export const VideoPreview: React.FC<VideoPreviewProps> = ({
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, delay: 0.05 }}
-          className="bg-[#FAF7F2] border border-[#E2DDD5] rounded-xl p-3.5 sm:p-4 text-center"
+          className="bg-[#FAF7F2] rounded-xl p-3.5 sm:p-4 text-center"
         >
           <p className="text-xs font-normal text-[#78716C] m-0">
             Original size
@@ -69,7 +69,7 @@ export const VideoPreview: React.FC<VideoPreviewProps> = ({
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, delay: 0.1 }}
-          className="bg-[#FAF7F2] border border-[#E2DDD5] rounded-xl p-3.5 sm:p-4 text-center"
+          className="bg-[#FAF7F2] rounded-xl p-3.5 sm:p-4 text-center"
         >
           <p className="text-xs font-normal text-[#78716C] m-0">
             Compressed size
@@ -83,7 +83,7 @@ export const VideoPreview: React.FC<VideoPreviewProps> = ({
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, delay: 0.15 }}
-          className="bg-[#FAF7F2] border border-[#E2DDD5] rounded-xl p-3.5 sm:p-4 text-center"
+          className="bg-[#FAF7F2] rounded-xl p-3.5 sm:p-4 text-center"
         >
           <p className="text-xs font-normal text-[#78716C] m-0">
             Space saved
@@ -97,7 +97,7 @@ export const VideoPreview: React.FC<VideoPreviewProps> = ({
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, delay: 0.2 }}
-          className="bg-[#FAF7F2] border border-[#E2DDD5] rounded-xl p-3.5 sm:p-4 text-center"
+          className="bg-[#FAF7F2] rounded-xl p-3.5 sm:p-4 text-center"
         >
           <p className="text-xs font-normal text-[#78716C] m-0">
             Resolution
@@ -117,7 +117,7 @@ export const VideoPreview: React.FC<VideoPreviewProps> = ({
       >
         <Button
           type="button"
-          variant="outline"
+          variant="secondary"
           size="md"
           onClick={onReset}
           className="w-full sm:w-auto"

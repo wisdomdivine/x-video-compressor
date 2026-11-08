@@ -52,7 +52,7 @@ export const Header: React.FC<HeaderProps> = ({
           whileTap={{ scale: 0.97 }}
           transition={{ duration: 0.15 }}
           onClick={onToggleLogoType}
-          className="text-xs font-normal px-3 py-1.5 rounded-lg border border-[#E2DDD5] bg-white text-[#57534E] hover:bg-[#F7F4EE] cursor-pointer transition-colors"
+          className="text-xs font-normal px-3 py-1.5 rounded-lg bg-white text-[#57534E] hover:bg-[#EAE5DB] cursor-pointer transition-colors outline-none"
           title="Switch between Cone and Monitor logo"
         >
           {logoType === 'cone' ? 'Cone' : 'Monitor'}
@@ -63,7 +63,7 @@ export const Header: React.FC<HeaderProps> = ({
           whileTap={{ scale: 0.97 }}
           transition={{ duration: 0.15 }}
           onClick={onToggleLogoVariant}
-          className="text-xs font-normal px-3 py-1.5 rounded-lg border border-[#E2DDD5] bg-white text-[#57534E] hover:bg-[#F7F4EE] cursor-pointer transition-colors"
+          className="text-xs font-normal px-3 py-1.5 rounded-lg bg-white text-[#57534E] hover:bg-[#EAE5DB] cursor-pointer transition-colors outline-none"
           title="Switch between color and black and white"
         >
           {logoVariant === 'color' ? 'Color' : 'Monochrome'}

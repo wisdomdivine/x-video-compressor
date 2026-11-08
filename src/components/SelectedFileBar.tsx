@@ -22,7 +22,7 @@ export const SelectedFileBar: React.FC<SelectedFileBarProps> = ({
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2 }}
-      className="bg-[#FAF7F2] border border-[#E2DDD5] rounded-xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+      className="bg-[#FAF7F2] rounded-xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
     >
       <div className="flex items-center gap-3 sm:gap-3.5 overflow-hidden min-w-0">
         <div className="w-10 h-10 rounded-lg bg-[#EAE5DB] text-[#1C1917] flex items-center justify-center shrink-0">
@@ -41,7 +41,7 @@ export const SelectedFileBar: React.FC<SelectedFileBarProps> = ({
       <div className="flex items-center gap-2 w-full sm:w-auto shrink-0">
         <Button
           type="button"
-          variant="outline"
+          variant="secondary"
           size="sm"
           onClick={onClear}
           disabled={disabled}

@@ -48,10 +48,8 @@ export const Dropzone: React.FC<DropzoneProps> = ({ onFileSelect, disabled }) =>
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
-      className={`border-2 border-dashed rounded-2xl p-6 sm:p-10 md:p-14 text-center transition-colors ${
-        isDragOver
-          ? 'border-[#E05A38] bg-[#FDF8F5]'
-          : 'border-[#E2DDD5] bg-[#FAF7F2]'
+      className={`rounded-2xl p-6 sm:p-10 md:p-14 text-center transition-colors ${
+        isDragOver ? 'bg-[#FDF0EC]' : 'bg-[#FAF7F2]'
       }`}
     >
       <input

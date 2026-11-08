@@ -12,10 +12,11 @@ These rules apply on every prompt and across all generated code and replies.
 7. No pulses or pulsing animations
 8. No border left accents
 9. No shadows or box shadows
-10. No tags
-11. No pills or pill badges
-12. No gradients. Use solid colors only
-13. Do not use any placeholder icons or boxes for the logo
+10. No borders anywhere (remove all borders)
+11. No tags
+12. No pills or pill badges
+13. No gradients. Use solid colors only
+14. Do not use any placeholder icons or boxes for the logo
 
 ## Typography and Spacing
 1. Light fonts only. Do not use bold or heavy weights unless explicitly asked
@@ -27,4 +28,3 @@ These rules apply on every prompt and across all generated code and replies.
 ## Tone and Language
 1. Everyday layman grammar
 2. Clear, simple, direct phrasing
-

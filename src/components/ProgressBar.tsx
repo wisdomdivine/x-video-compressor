@@ -20,7 +20,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2 }}
-      className="bg-[#FAF7F2] border border-[#E2DDD5] rounded-xl p-5 sm:p-8 space-y-5"
+      className="bg-[#FAF7F2] rounded-xl p-5 sm:p-8 space-y-5"
     >
       <div className="flex items-center justify-between gap-4">
         <div className="overflow-hidden min-w-0">
@@ -50,7 +50,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
       <div className="flex justify-end pt-1">
         <Button
           type="button"
-          variant="outline"
+          variant="secondary"
           size="sm"
           onClick={onCancel}
           className="w-full sm:w-auto"
