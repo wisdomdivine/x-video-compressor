@@ -41,37 +41,37 @@ export const VideoPreview: React.FC<VideoPreviewProps> = ({
       {/* Metrics Row */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div className="bg-[#FAF7F2] border border-[#E2DDD5] rounded-xl p-4 text-center">
-          <p className="text-xs font-light text-[#78716C] m-0">
+          <p className="text-xs font-normal text-[#78716C] m-0">
             Original size
           </p>
-          <p className="text-lg font-normal text-[#1C1917] mt-1.5 m-0">
+          <p className="text-lg font-medium text-[#1C1917] mt-1.5 m-0">
             {formatBytes(result.originalSize)}
           </p>
         </div>
 
         <div className="bg-[#FAF7F2] border border-[#E2DDD5] rounded-xl p-4 text-center">
-          <p className="text-xs font-light text-[#78716C] m-0">
+          <p className="text-xs font-normal text-[#78716C] m-0">
             Compressed size
           </p>
-          <p className="text-lg font-normal text-[#E05A38] mt-1.5 m-0">
+          <p className="text-lg font-medium text-[#E05A38] mt-1.5 m-0">
             {formatBytes(result.compressedSize)}
           </p>
         </div>
 
         <div className="bg-[#FAF7F2] border border-[#E2DDD5] rounded-xl p-4 text-center">
-          <p className="text-xs font-light text-[#78716C] m-0">
+          <p className="text-xs font-normal text-[#78716C] m-0">
             Space saved
           </p>
-          <p className="text-lg font-normal text-[#1C1917] mt-1.5 m-0">
+          <p className="text-lg font-medium text-[#1C1917] mt-1.5 m-0">
             {result.savingsPercent}% smaller
           </p>
         </div>
 
         <div className="bg-[#FAF7F2] border border-[#E2DDD5] rounded-xl p-4 text-center">
-          <p className="text-xs font-light text-[#78716C] m-0">
+          <p className="text-xs font-normal text-[#78716C] m-0">
             Resolution
           </p>
-          <p className="text-lg font-normal text-[#1C1917] mt-1.5 m-0">
+          <p className="text-lg font-medium text-[#1C1917] mt-1.5 m-0">
             {result.width} x {result.height}
           </p>
         </div>
@@ -102,7 +102,7 @@ export const VideoPreview: React.FC<VideoPreviewProps> = ({
       </div>
 
       <div className="text-center pt-2">
-        <p className="text-xs font-light text-[#A8A29E] m-0">
+        <p className="text-xs font-normal text-[#A8A29E] m-0">
           Video duration is {formatDuration(result.duration)}. Your file was processed locally in your browser.
         </p>
       </div>

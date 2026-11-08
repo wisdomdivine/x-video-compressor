@@ -23,10 +23,10 @@ export const SelectedFileBar: React.FC<SelectedFileBarProps> = ({
           <Attachment01Icon size={20} />
         </div>
         <div className="overflow-hidden">
-          <p className="text-sm font-normal text-[#1C1917] truncate m-0">
+          <p className="text-sm font-medium text-[#1C1917] truncate m-0">
             {file.name}
           </p>
-          <p className="text-xs font-light text-[#78716C] mt-0.5 m-0">
+          <p className="text-xs font-normal text-[#78716C] mt-0.5 m-0">
             {formatBytes(file.size)}
           </p>
         </div>

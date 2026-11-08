@@ -55,10 +55,10 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
     <div className="bg-[#FAF7F2] border border-[#E2DDD5] rounded-xl p-6 space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h3 className="text-base font-normal text-[#1C1917] m-0">
+          <h3 className="text-base font-medium text-[#1C1917] m-0">
             Compression settings
           </h3>
-          <p className="text-xs font-light text-[#78716C] mt-1 m-0">
+          <p className="text-xs font-normal text-[#78716C] mt-1 m-0">
             Choose a quick mode or fine tune the options below
           </p>
         </div>
@@ -69,7 +69,7 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
             type="button"
             onClick={() => setPreset('small')}
             disabled={disabled}
-            className={`text-xs font-light px-3 py-1.5 rounded-lg border transition-colors cursor-pointer ${
+            className={`text-xs font-medium px-3 py-1.5 rounded-lg border transition-colors cursor-pointer ${
               isPresetActive('small')
                 ? 'bg-[#1C1917] text-white border-[#1C1917]'
                 : 'bg-white text-[#57534E] border-[#E2DDD5] hover:bg-[#F2ECE1]'
@@ -81,7 +81,7 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
             type="button"
             onClick={() => setPreset('balanced')}
             disabled={disabled}
-            className={`text-xs font-light px-3 py-1.5 rounded-lg border transition-colors cursor-pointer ${
+            className={`text-xs font-medium px-3 py-1.5 rounded-lg border transition-colors cursor-pointer ${
               isPresetActive('balanced')
                 ? 'bg-[#1C1917] text-white border-[#1C1917]'
                 : 'bg-white text-[#57534E] border-[#E2DDD5] hover:bg-[#F2ECE1]'
@@ -93,7 +93,7 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
             type="button"
             onClick={() => setPreset('hq')}
             disabled={disabled}
-            className={`text-xs font-light px-3 py-1.5 rounded-lg border transition-colors cursor-pointer ${
+            className={`text-xs font-medium px-3 py-1.5 rounded-lg border transition-colors cursor-pointer ${
               isPresetActive('hq')
                 ? 'bg-[#1C1917] text-white border-[#1C1917]'
                 : 'bg-white text-[#57534E] border-[#E2DDD5] hover:bg-[#F2ECE1]'
@@ -107,7 +107,7 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
         {/* Resolution Scale */}
         <div className="space-y-1.5">
-          <label className="text-xs font-normal text-[#57534E]">
+          <label className="text-xs font-medium text-[#57534E]">
             Resolution
           </label>
           <select
@@ -116,7 +116,7 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
             onChange={(e) =>
               onChange({ ...options, resolutionScale: parseFloat(e.target.value) })
             }
-            className="w-full bg-white border border-[#E2DDD5] text-xs font-light text-[#1C1917] rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-[#E05A38]"
+            className="w-full bg-white border border-[#E2DDD5] text-xs font-normal text-[#1C1917] rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-[#E05A38]"
           >
             <option value="1.0">Original size 100%</option>
             <option value="0.75">Scaled 75%</option>
@@ -127,7 +127,7 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
 
         {/* Bitrate */}
         <div className="space-y-1.5">
-          <label className="text-xs font-normal text-[#57534E]">
+          <label className="text-xs font-medium text-[#57534E]">
             Target bit rate
           </label>
           <select
@@ -139,7 +139,7 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
                 targetBitrateKbps: parseInt(e.target.value, 10)
               })
             }
-            className="w-full bg-white border border-[#E2DDD5] text-xs font-light text-[#1C1917] rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-[#E05A38]"
+            className="w-full bg-white border border-[#E2DDD5] text-xs font-normal text-[#1C1917] rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-[#E05A38]"
           >
             <option value="800">800 kbps (Very compact)</option>
             <option value="1500">1500 kbps (Compact)</option>
@@ -151,7 +151,7 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
 
         {/* Audio */}
         <div className="space-y-1.5">
-          <label className="text-xs font-normal text-[#57534E]">
+          <label className="text-xs font-medium text-[#57534E]">
             Audio track
           </label>
           <select
@@ -163,7 +163,7 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
                 includeAudio: e.target.value === 'yes'
               })
             }
-            className="w-full bg-white border border-[#E2DDD5] text-xs font-light text-[#1C1917] rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-[#E05A38]"
+            className="w-full bg-white border border-[#E2DDD5] text-xs font-normal text-[#1C1917] rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-[#E05A38]"
           >
             <option value="yes">Keep audio track</option>
             <option value="no">Mute audio track</option>
@@ -172,7 +172,7 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
 
         {/* Output Format */}
         <div className="space-y-1.5">
-          <label className="text-xs font-normal text-[#57534E]">
+          <label className="text-xs font-medium text-[#57534E]">
             Output format
           </label>
           <select
@@ -184,7 +184,7 @@ export const CompressionSettings: React.FC<CompressionSettingsProps> = ({
                 outputFormat: e.target.value as 'mp4' | 'webm'
               })
             }
-            className="w-full bg-white border border-[#E2DDD5] text-xs font-light text-[#1C1917] rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-[#E05A38]"
+            className="w-full bg-white border border-[#E2DDD5] text-xs font-normal text-[#1C1917] rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:border-[#E05A38]"
           >
             <option value="mp4">MP4 format</option>
             <option value="webm">WebM format</option>

@@ -27,3 +27,4 @@ These rules apply on every prompt and across all generated code and replies.
 ## Tone and Language
 1. Everyday layman grammar
 2. Clear, simple, direct phrasing
+

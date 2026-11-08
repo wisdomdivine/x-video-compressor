@@ -25,10 +25,10 @@ export const Header: React.FC<HeaderProps> = ({
           className="cursor-pointer transition-transform hover:scale-105"
         />
         <div>
-          <h1 className="text-xl sm:text-2xl font-light text-[#1C1917] tracking-tight m-0">
+          <h1 className="text-xl sm:text-2xl font-medium text-[#1C1917] tracking-tight m-0">
             Video Compressor
           </h1>
-          <p className="text-xs text-[#78716C] font-light mt-0.5 m-0">
+          <p className="text-xs text-[#78716C] font-normal mt-0.5 m-0">
             Private and free in browser compression
           </p>
         </div>
@@ -37,7 +37,7 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="flex items-center gap-2">
         <button
           onClick={onToggleLogoType}
-          className="text-xs font-light px-3 py-1.5 rounded-lg border border-[#E2DDD5] bg-white text-[#57534E] hover:bg-[#F7F4EE] cursor-pointer transition-colors"
+          className="text-xs font-normal px-3 py-1.5 rounded-lg border border-[#E2DDD5] bg-white text-[#57534E] hover:bg-[#F7F4EE] cursor-pointer transition-colors"
           title="Switch between Cone and Monitor logo"
         >
           {logoType === 'cone' ? 'Cone' : 'Monitor'}
@@ -45,7 +45,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         <button
           onClick={onToggleLogoVariant}
-          className="text-xs font-light px-3 py-1.5 rounded-lg border border-[#E2DDD5] bg-white text-[#57534E] hover:bg-[#F7F4EE] cursor-pointer transition-colors"
+          className="text-xs font-normal px-3 py-1.5 rounded-lg border border-[#E2DDD5] bg-white text-[#57534E] hover:bg-[#F7F4EE] cursor-pointer transition-colors"
           title="Switch between color and black and white"
         >
           {logoVariant === 'color' ? 'Color' : 'Monochrome'}

@@ -3,12 +3,13 @@
 @layer base {
   html, body {
     font-family: 'Satoshi', system-ui, sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     background-color: #F7F4EE;
     color: #1C1917;
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
   }
 
   button, input, select, textarea {

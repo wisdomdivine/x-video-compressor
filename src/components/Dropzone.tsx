@@ -65,10 +65,10 @@ export const Dropzone: React.FC<DropzoneProps> = ({ onFileSelect, disabled }) =>
         </div>
 
         <div className="space-y-2">
-          <h2 className="text-xl sm:text-2xl font-light text-[#1C1917] m-0">
+          <h2 className="text-xl sm:text-2xl font-medium text-[#1C1917] m-0">
             You can upload a video
           </h2>
-          <p className="text-sm text-[#78716C] font-light max-w-md mx-auto m-0">
+          <p className="text-sm text-[#78716C] font-normal max-w-md mx-auto m-0">
             Click on the button or drag and drop files here
           </p>
         </div>
@@ -86,7 +86,7 @@ export const Dropzone: React.FC<DropzoneProps> = ({ onFileSelect, disabled }) =>
           </Button>
         </div>
 
-        <p className="text-xs text-[#A8A29E] font-light pt-2 m-0">
+        <p className="text-xs text-[#A8A29E] font-normal pt-2 m-0">
           MP4, MOV, WebM and MKV files supported
         </p>
       </div>

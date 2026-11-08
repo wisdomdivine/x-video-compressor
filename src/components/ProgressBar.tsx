@@ -18,15 +18,15 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
     <div className="bg-[#FAF7F2] border border-[#E2DDD5] rounded-xl p-6 sm:p-8 space-y-5">
       <div className="flex items-center justify-between gap-4">
         <div className="overflow-hidden">
-          <p className="text-sm font-normal text-[#1C1917] truncate m-0">
+          <p className="text-sm font-medium text-[#1C1917] truncate m-0">
             {fileName}
           </p>
-          <p className="text-xs font-light text-[#78716C] mt-1 m-0">
+          <p className="text-xs font-normal text-[#78716C] mt-1 m-0">
             {statusMessage}
           </p>
         </div>
 
-        <span className="text-base font-light text-[#1C1917] shrink-0">
+        <span className="text-base font-medium text-[#1C1917] shrink-0">
           {progress}%
         </span>
       </div>

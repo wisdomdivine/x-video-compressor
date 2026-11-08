@@ -39,3 +39,4 @@ export const Logo: React.FC<LogoProps> = ({
     </div>
   )
 }
+

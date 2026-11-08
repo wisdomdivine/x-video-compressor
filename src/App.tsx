@@ -116,7 +116,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F7F4EE] text-[#1C1917] flex flex-col font-light selection:bg-[#EAE5DB]">
+    <div className="min-h-screen bg-[#F7F4EE] text-[#1C1917] flex flex-col font-normal selection:bg-[#EAE5DB]">
       <Header
         logoType={logoType}
         logoVariant={logoVariant}
@@ -204,10 +204,10 @@ export default function App() {
                 className="space-y-6 text-center py-6"
               >
                 <div className="space-y-2">
-                  <h3 className="text-lg font-normal text-[#1C1917] m-0">
+                  <h3 className="text-lg font-medium text-[#1C1917] m-0">
                     Could not complete compression
                   </h3>
-                  <p className="text-sm text-[#78716C] font-light max-w-md mx-auto m-0">
+                  <p className="text-sm text-[#78716C] font-normal max-w-md mx-auto m-0">
                     {errorMessage || 'An error occurred during video processing'}
                   </p>
                 </div>
@@ -216,7 +216,7 @@ export default function App() {
                   <button
                     type="button"
                     onClick={() => setStatus('selected')}
-                    className="text-sm font-light px-5 py-2.5 rounded-xl bg-[#EAE5DB] text-[#1C1917] hover:bg-[#DFD9CE] cursor-pointer transition-colors"
+                    className="text-sm font-normal px-5 py-2.5 rounded-xl bg-[#EAE5DB] text-[#1C1917] hover:bg-[#DFD9CE] cursor-pointer transition-colors"
                   >
                     Try again
                   </button>
@@ -228,10 +228,10 @@ export default function App() {
 
         {/* Informational footer with ample whitespace */}
         <div className="mt-12 text-center space-y-3">
-          <p className="text-xs text-[#78716C] font-light m-0">
+          <p className="text-xs text-[#78716C] font-normal m-0">
             Free and open tool. Videos stay on your computer and never upload anywhere.
           </p>
-          <p className="text-xs text-[#A8A29E] font-light m-0">
+          <p className="text-xs text-[#A8A29E] font-normal m-0">
             Works completely offline in your browser.
           </p>
         </div>
