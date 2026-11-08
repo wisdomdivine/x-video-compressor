@@ -1,21 +1,26 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import { forwardRef, type ReactNode } from 'react'
+import { motion, type HTMLMotionProps } from 'framer-motion'
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends Omit<HTMLMotionProps<'button'>, 'children'> {
   variant?: 'primary' | 'secondary' | 'outline' | 'danger'
   size?: 'sm' | 'md' | 'lg'
-  icon?: React.ReactNode
+  icon?: ReactNode
+  children?: ReactNode
 }
 
-export const Button: React.FC<ButtonProps> = ({
-  variant = 'primary',
-  size = 'md',
-  icon,
-  children,
-  className = '',
-  disabled,
-  ...props
-}) => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
+  {
+    variant = 'primary',
+    size = 'md',
+    type = 'button',
+    icon,
+    children,
+    className = '',
+    disabled,
+    ...props
+  },
+  ref
+) {
   const baseClasses =
     'inline-flex items-center justify-center font-normal transition-colors select-none cursor-pointer disabled:cursor-not-allowed disabled:opacity-40 rounded-xl outline-none'
 
@@ -38,15 +43,17 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <motion.button
+      ref={ref}
+      type={type}
       whileHover={disabled ? undefined : { y: -1 }}
       whileTap={disabled ? undefined : { scale: 0.98 }}
       transition={{ duration: 0.15 }}
       className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
       disabled={disabled}
-      {...(props as React.ComponentProps<typeof motion.button>)}
+      {...props}
     >
       {icon && <span className="inline-flex shrink-0">{icon}</span>}
       {children}
     </motion.button>
   )
-}
+})
