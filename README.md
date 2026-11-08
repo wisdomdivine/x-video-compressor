@@ -1,26 +1,38 @@
-# x-video-compressor
+# Video Compressor
 
-A modern, fast, and privacy-first in-browser video compression tool. Free and open to all — no backend, no database, no accounts, and zero server hosting costs.
+A fast and private video compression tool that runs entirely inside your web browser. Free and open for everyone with zero uploads, no accounts, and no limits.
 
-## Tech Stack
-- **Framework:** [React 19](https://react.dev/) + [Vite](https://vite.dev/) + [TypeScript](https://www.typescriptlang.org/)
-- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
-- **Routing:** [React Router v7](https://reactrouter.com/)
-- **Icons:** [Hugeicons React](https://hugeicons.com/)
+Live Website: https://x-video-compressor.web.app
 
-## Getting Started
+## About the Product
 
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+Large video files and screen recordings often take up gigabytes of space, making them difficult to send over email, share on messaging apps, or upload to the web.
 
-2. **Run dev server:**
-   ```bash
-   npm run dev
-   ```
+Video Compressor solves this problem by shrinking video file sizes by up to 90 percent while maintaining sharp visual quality and smooth motion.
 
-3. **Build for production:**
-   ```bash
-   npm run build
-   ```
+Because all processing happens directly on your device, your videos never upload to any remote server. Your personal media stays completely private and secure.
+
+## Key Features
+
+1. Complete privacy
+Your video files never leave your computer or phone. Processing runs entirely in your local browser environment.
+
+2. Zero file size limits
+Compress videos of any size or duration without artificial caps, paywalls, or watermarks.
+
+3. Offline capability
+Once loaded, the tool works fully offline without an internet connection. You can also install it as a standalone app on your desktop or mobile device.
+
+4. Quick presets and custom control
+Choose simple one click options for smallest file size, balanced compression, or high quality results. You can also adjust resolution, bit rate, sound, and format.
+
+5. Instant side by side comparison
+Review the output file size, original size, space saved percentage, and preview your compressed video in the player before downloading.
+
+## How to Use
+
+1. Open https://x-video-compressor.web.app in your browser.
+2. Select your video file or drop it into the upload area.
+3. Choose your compression preset or adjust settings to your preference.
+4. Click Compress Now and watch the live progress bar.
+5. Preview your result and click Download to save the compressed file.
