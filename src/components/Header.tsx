@@ -20,7 +20,7 @@ export const Header: React.FC<HeaderProps> = ({
       initial={{ opacity: 0, y: -6 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25 }}
-      className="w-full max-w-4xl mx-auto pt-6 sm:pt-10 pb-6 sm:pb-8 px-4 sm:px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+      className="w-full max-w-6xl mx-auto pt-6 sm:pt-10 pb-6 sm:pb-8 px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
     >
       <div className="flex items-center gap-3.5 sm:gap-4">
         <motion.div

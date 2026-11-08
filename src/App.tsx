@@ -124,7 +124,7 @@ export default function App() {
         onToggleLogoVariant={handleToggleLogoVariant}
       />
 
-      <main className="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 py-4 sm:py-8 md:py-10 flex flex-col justify-center">
+      <main className="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-10 flex flex-col justify-center">
         <Card>
           <AnimatePresence mode="wait">
             {status === 'idle' && (
