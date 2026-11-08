@@ -1,0 +1,22 @@
+{
+  "name": "Video Compressor",
+  "short_name": "Compressor",
+  "description": "Private and free in browser video compression",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F4EE",
+  "theme_color": "#F7F4EE",
+  "icons": [
+    {
+      "src": "/logos/cone-color.png",
+      "sizes": "750x750",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logos/monitor-color.png",
+      "sizes": "750x750",
+      "type": "image/png"
+    }
+  ]
+}
